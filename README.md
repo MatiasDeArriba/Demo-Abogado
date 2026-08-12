@@ -1,6 +1,7 @@
 # ⚖️ Estudio Jurídico — Sitio Web Institucional
 
 Repositorio del sitio web institucional para estudio de abogados / profesional independiente. Desarrollado con tecnologías web puras (**HTML5, CSS3 y JavaScript vanilla**), priorizando rendimiento, SEO local, accesibilidad y conversión directa de clientes.
+![Vista Previa del Sitio Web](Screenshots/CapturaWeb.png)
 
 ---
 
