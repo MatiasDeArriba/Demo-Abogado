@@ -69,7 +69,7 @@ Demo-Abogado/
    git clone [https://github.com/MatiasDeArriba/Demo-Abogado.git](https://github.com/MatiasDeArriba/Demo-Abogado.git)
 ````
 
-Acceder al directorio:
+## Acceder al directorio:
 
 Bash
 cd Demo-Abogado
@@ -79,7 +79,7 @@ Abrí index.html directamente en tu navegador preferido.
 
 Opcional: Si usás VS Code, podés instalar la extensión Live Server, hacer clic derecho sobre index.html y seleccionar Open with Live Server.
 
-🎨 Estrategia de Frontend y UX/UI
+## 🎨 Estrategia de Frontend y UX/UI
 Paleta de Colores:
 
 Azul Marino (#0B1D3A): Transmite solidez, elegancia y autoridad legal.
@@ -125,7 +125,7 @@ JSON
 "addressCountry": "AR"
 }
 }
-🌐 Despliegue / Hosting
+## 🌐 Despliegue / Hosting
 Recomendado para la publicación final en producción:
 
 GitHub Pages (Opción actual):
@@ -134,4 +134,4 @@ Ajustes del repositorio -> Pages -> Branch main -> /root -> Save.
 
 Dominio Personalizado: Configuración de DNS (Registrar.ar / Cloudflare) apuntando registros CNAME / A hacia la plataforma de hosting.
 
-Desarrollado por Matías De Arriba.
+## Desarrollado por Matías De Arriba.
