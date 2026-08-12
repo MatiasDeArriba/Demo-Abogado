@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Ignacio Ferreyra | Abogado Laboralista — Buenos Aires</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #101b2e;
+        --paper: #e9e6dc;
+        --paper-2: #f3f1e9;
+        --brass: #a07c3b;
+        --burgundy: #6e2430;
+        --slate: #4a5568;
+        --line: #c9c2ae;
+        --white: #fffdf8;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "IBM Plex Sans", sans-serif;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ---- NAV ---- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(233, 230, 220, 0.92);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+      }
+      nav.wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 76px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1.5px solid var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .brand-name {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+      .brand-name span {
+        display: block;
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 400;
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        color: var(--slate);
+        text-transform: uppercase;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 36px;
+        font-size: 14.5px;
+      }
+      nav ul a {
+        text-decoration: none;
+        position: relative;
+        padding: 4px 0;
+      }
+      nav ul a:hover {
+        color: var(--burgundy);
+      }
+      .nav-cta {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: 2px;
+        font-size: 13.5px;
+        font-weight: 500;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+      .nav-cta:hover {
+        background: var(--burgundy);
+      }
+      .burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .burger span {
+        width: 24px;
+        height: 1.5px;
+        background: var(--ink);
+      }
+
+      /* ---- HERO ---- */
+      .hero {
+        position: relative;
+        padding: 88px 0 72px;
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: var(--burgundy);
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4.6vw, 54px);
+        max-width: 720px;
+        line-height: 1.12;
+        margin-bottom: 24px;
+      }
+      .hero p.lead {
+        max-width: 520px;
+        color: var(--slate);
+        font-size: 17px;
+        margin-bottom: 36px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 48px;
+      }
+      .btn-primary {
+        background: var(--brass);
+        color: var(--white);
+        padding: 14px 26px;
+        border-radius: 2px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14.5px;
+        letter-spacing: 0.01em;
+        border: 1px solid var(--brass);
+        transition: 0.15s;
+      }
+      .btn-primary:hover {
+        background: #8a6a30;
+      }
+      .btn-secondary {
+        padding: 14px 26px;
+        border-radius: 2px;
+        border: 1px solid var(--ink);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14.5px;
+        color: var(--ink);
+      }
+      .btn-secondary:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .meta-row {
+        display: flex;
+        gap: 0;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line);
+        max-width: 760px;
+      }
+      .meta-item {
+        padding: 16px 28px 0 0;
+        margin-right: 28px;
+        border-right: 1px solid var(--line);
+        font-size: 13px;
+        color: var(--slate);
+      }
+      .meta-item:last-child {
+        border-right: none;
+      }
+      .meta-item b {
+        display: block;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12.5px;
+        color: var(--ink);
+        margin-top: 6px;
+      }
+
+      .seal {
+        position: absolute;
+        top: 70px;
+        right: 32px;
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
+        border: 1.5px solid var(--burgundy);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-9deg);
+      }
+      .seal::before {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border-radius: 50%;
+        border: 1px dashed var(--burgundy);
+        opacity: 0.5;
+      }
+      .seal-inner {
+        text-align: center;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--burgundy);
+      }
+      .seal-inner .big {
+        font-family: "Fraunces", serif;
+        font-size: 20px;
+        display: block;
+      }
+      .seal-inner .small {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        display: block;
+        margin-top: 4px;
+      }
+
+      /* ---- ARTICULOS (areas de practica) ---- */
+      .section {
+        padding: 88px 0;
+      }
+      .section-head {
+        max-width: 600px;
+        margin-bottom: 56px;
+      }
+      .section-head .eyebrow {
+        margin-bottom: 16px;
+      }
+      .section-head h2 {
+        font-size: clamp(26px, 3vw, 36px);
+      }
+      .articulos {
+        border-top: 1px solid var(--line);
+      }
+      .articulo {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 32px;
+        padding: 36px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .articulo .num {
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--brass);
+        font-size: 14px;
+        padding-top: 4px;
+      }
+      .articulo h3 {
+        font-size: 21px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      .articulo p {
+        color: var(--slate);
+        font-size: 15px;
+        max-width: 560px;
+      }
+
+      /* ---- SOBRE MI ---- */
+      .about {
+        background: var(--ink);
+        color: var(--paper-2);
+      }
+      .about .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .about h2 {
+        color: var(--white);
+        font-size: clamp(26px, 3vw, 34px);
+        margin-bottom: 20px;
+      }
+      .about p {
+        color: #c8cbd4;
+        font-size: 15.5px;
+        margin-bottom: 16px;
+        max-width: 460px;
+      }
+      .credentials {
+        list-style: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .credentials li {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 14px;
+      }
+      .credentials li span:first-child {
+        color: #8b93a3;
+      }
+      .credentials li span:last-child {
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--white);
+      }
+
+      /* ---- STATS ---- */
+      .stats {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .stats .wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+      }
+      .stat {
+        padding: 44px 32px;
+        border-right: 1px solid var(--line);
+      }
+      .stat:last-child {
+        border-right: none;
+      }
+      .stat b {
+        display: block;
+        font-family: "Fraunces", serif;
+        font-size: 38px;
+        color: var(--burgundy);
+        margin-bottom: 6px;
+      }
+      .stat span {
+        font-size: 13.5px;
+        color: var(--slate);
+      }
+
+      /* ---- TESTIMONIOS ---- */
+      .testimonios .wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+      .testi {
+        background: var(--paper-2);
+        border: 1px solid var(--line);
+        padding: 32px;
+        position: relative;
+      }
+      .testi p {
+        font-family: "Fraunces", serif;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+      .testi-foot {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .testi-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--brass);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        color: var(--brass);
+      }
+      .testi-foot b {
+        display: block;
+        font-size: 13.5px;
+      }
+      .testi-foot span {
+        font-size: 12px;
+        color: var(--slate);
+      }
+
+      /* ---- CONTACTO ---- */
+      .contacto {
+        background: var(--paper-2);
+        border-top: 1px solid var(--line);
+      }
+      .contacto .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 12.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--slate);
+        margin-bottom: 8px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        background: var(--white);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 14.5px;
+        border-radius: 2px;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: 2px solid var(--brass);
+        outline-offset: 1px;
+      }
+      .form-note {
+        font-size: 13px;
+        color: var(--slate);
+        margin-top: 16px;
+      }
+      .info-block {
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+        margin-top: 8px;
+      }
+      .info-block div {
+        margin-bottom: 18px;
+        font-size: 14.5px;
+      }
+      .info-block div b {
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--slate);
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+
+      /* ---- FOOTER ---- */
+      footer {
+        background: var(--ink);
+        color: #8b93a3;
+        padding: 40px 0;
+        font-size: 12.5px;
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      footer a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #8b93a3;
+      }
+      footer a:hover {
+        color: var(--white);
+      }
+      .legal-disclaimer {
+        font-size: 11.5px;
+        color: #6b7280;
+        max-width: 760px;
+        margin: 0 auto 24px;
+        text-align: center;
+        padding: 0 32px;
+      }
+
+      /* ---- WHATSAPP FLOAT ---- */
+      .wa-float {
+        position: fixed;
+        bottom: 26px;
+        right: 26px;
+        z-index: 60;
+        background: #25864a;
+        color: #fff;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        font-size: 26px;
+      }
+
+      @media (max-width: 860px) {
+        nav ul,
+        .nav-cta {
+          display: none;
+        }
+        .burger {
+          display: flex;
+        }
+        .seal {
+          display: none;
+        }
+        .about .wrap,
+        .contacto .wrap,
+        .testimonios .wrap {
+          grid-template-columns: 1fr;
+        }
+        .stats .wrap {
+          grid-template-columns: 1fr;
+        }
+        .stat {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+        .articulo {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="wrap">
+        <div class="brand">
+          <div class="brand-mark">IF</div>
+          <div class="brand-name">
+            Ignacio Ferreyra
+            <span>Abogado laboralista</span>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#areas">Áreas de práctica</a></li>
+          <li><a href="#sobre">Sobre mí</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#contacto" class="nav-cta">Consulta gratuita</a>
+        <button class="burger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Estudio jurídico — Derecho laboral</div>
+        <h1>Cuando tu trabajo está en juego,<br />cada día cuenta.</h1>
+        <p class="lead">
+          Asesoramiento legal en despidos, indemnizaciones y accidentes
+          laborales. Primera consulta sin cargo, respuesta dentro de las 24
+          horas.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn-primary"
+            >Consulta gratuita por WhatsApp</a
+          >
+          <a href="#areas" class="btn-secondary">Ver áreas de práctica</a>
+        </div>
+        <div class="meta-row">
+          <div class="meta-item">Matrícula<b>CPACF Tº 120 Fº 345</b></div>
+          <div class="meta-item">Colegio<b>C.P.A.C.F. — Buenos Aires</b></div>
+          <div class="meta-item">Ejercicio<b>15 años en la matrícula</b></div>
+        </div>
+      </div>
+      <div class="seal">
+        <div class="seal-inner">
+          <span class="big">Ab.</span>
+          <span class="small">T° 120 · F° 345</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="areas">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Áreas de práctica</div>
+          <h2>
+            Cuatro frentes, un mismo objetivo: proteger tu derecho al trabajo.
+          </h2>
+        </div>
+        <div class="articulos">
+          <div class="articulo">
+            <div class="num">Art. 1°</div>
+            <div>
+              <h3>Despidos y desvinculaciones</h3>
+              <p>
+                Análisis de causales, cálculo de indemnización correcta y
+                representación en negociación o instancia judicial ante despidos
+                con o sin causa.
+              </p>
+            </div>
+          </div>
+          <div class="articulo">
+            <div class="num">Art. 2°</div>
+            <div>
+              <h3>Accidentes y enfermedades laborales</h3>
+              <p>
+                Reclamos ante ART y demandas por incapacidad, con seguimiento
+                médico legal desde la denuncia hasta el cobro.
+              </p>
+            </div>
+          </div>
+          <div class="articulo">
+            <div class="num">Art. 3°</div>
+            <div>
+              <h3>Negociación de indemnizaciones</h3>
+              <p>
+                Mediación previa a juicio para acuerdos rápidos y justos,
+                evitando procesos largos cuando es posible.
+              </p>
+            </div>
+          </div>
+          <div class="articulo">
+            <div class="num">Art. 4°</div>
+            <div>
+              <h3>Asesoramiento a empresas</h3>
+              <p>
+                Auditoría de contratos, prevención de conflictos laborales y
+                acompañamiento en procesos de desvinculación.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="wrap">
+        <div class="stat">
+          <b>500+</b><span>Casos resueltos desde 2011</span>
+        </div>
+        <div class="stat">
+          <b>15</b><span>Años de trayectoria en fuero laboral</span>
+        </div>
+        <div class="stat">
+          <b>24 hs</b><span>Tiempo de respuesta a consultas</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="wrap">
+        <div>
+          <h2>Sobre el estudio</h2>
+          <p>
+            Ejerzo el derecho laboral desde 2011, representando tanto a
+            trabajadores como a empresas en conflictos individuales de trabajo.
+            Mi enfoque prioriza soluciones rápidas y transparentes por sobre
+            litigios prolongados, sin resignar el resultado justo.
+          </p>
+          <p>
+            Egresado de la Universidad de Buenos Aires, con posgrado en Derecho
+            del Trabajo (UBA) y matriculado activo en el Colegio Público de
+            Abogados de la Capital Federal.
+          </p>
+        </div>
+        <ul class="credentials">
+          <li><span>Universidad</span><span>UBA — Abogacía</span></li>
+          <li><span>Posgrado</span><span>Derecho del Trabajo, UBA</span></li>
+          <li><span>Matrícula</span><span>CPACF T° 120 F° 345</span></li>
+          <li><span>Ejercicio</span><span>Desde 2011</span></li>
+          <li><span>Idiomas</span><span>Español, inglés</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section testimonios" id="testimonios">
+      <div class="wrap" style="display: block; margin-bottom: 0">
+        <div class="section-head">
+          <div class="eyebrow">Testimonios</div>
+          <h2>Lo que dicen quienes ya consultaron.</h2>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="testi">
+          <p>
+            "Me despidieron sin causa después de 8 años. Ignacio calculó todo lo
+            que me correspondía y logramos un acuerdo mejor del que esperaba,
+            sin ir a juicio."
+          </p>
+          <div class="testi-foot">
+            <div class="testi-mark">MG</div>
+            <div><b>M. G.</b><span>Caso de despido sin causa</span></div>
+          </div>
+        </div>
+        <div class="testi">
+          <p>
+            "Tuve un accidente laboral y la ART me quería pagar una miseria. Con
+            su ayuda conseguimos el monto real que correspondía por la
+            incapacidad."
+          </p>
+          <div class="testi-foot">
+            <div class="testi-mark">RP</div>
+            <div><b>R. P.</b><span>Reclamo ante ART</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <div class="wrap">
+        <div>
+          <div class="section-head" style="margin-bottom: 32px">
+            <div class="eyebrow">Contacto</div>
+            <h2>Contanos tu situación</h2>
+          </div>
+          <form id="demoForm">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                placeholder="Tu nombre y apellido"
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" placeholder="11 1234 5678" />
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Contanos brevemente tu consulta</label>
+              <textarea
+                id="mensaje"
+                rows="4"
+                placeholder="Ej: me despidieron sin causa la semana pasada..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn-primary"
+              style="border: none; cursor: pointer"
+            >
+              Enviar consulta
+            </button>
+            <p class="form-note" id="formNote">
+              Este es un formulario de demostración — no envía datos reales.
+            </p>
+          </form>
+        </div>
+        <div>
+          <div class="info-block">
+            <div><b>Dirección</b>Av. Corrientes 1234, Piso 5° Of. B — CABA</div>
+            <div><b>Teléfono / WhatsApp</b>+54 9 11 1234-5678</div>
+            <div><b>Horario de atención</b>Lunes a viernes, 9 a 18 hs</div>
+            <div><b>Correo</b>consultas@ferreyraabogado.com.ar</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="legal-disclaimer">
+        El contenido de este sitio tiene fines informativos y no constituye
+        asesoramiento legal formal. Cada caso requiere un análisis particular —
+        consultá tu situación específica antes de tomar decisiones.
+      </p>
+      <div class="wrap">
+        <span>© 2026 Ignacio Ferreyra — Abogado. CPACF T° 120 F° 345.</span>
+        <div>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="wa-float" aria-label="Contactar por WhatsApp">💬</a>
+
+    <script>
+      document
+        .getElementById("demoForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("formNote").textContent =
+            "✓ Consulta enviada (demo). En producción esto llega a tu email o Google Sheet.";
+          document.getElementById("formNote").style.color = "#25864a";
+        });
+
+      const burger = document.querySelector(".burger");
+      const navList = document.querySelector("nav ul");
+      burger.addEventListener("click", () => {
+        navList.style.display =
+          navList.style.display === "flex" ? "none" : "flex";
+        navList.style.cssText +=
+          "flex-direction:column; position:absolute; top:76px; left:0; right:0; background:var(--paper-2); padding:24px 32px; gap:20px; border-bottom:1px solid var(--line);";
+      });
+    </script>
+  </body>
+</html>
